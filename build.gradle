@@ -10,7 +10,7 @@ version = '0.1.0'
 
 build.dependsOn.remove('check')
 
-[checkstyleMain, checkstyleTest].forEach({ task ->
+[checkstyleMain, checkstyleTest].each({ task ->
     task.inputs.file(new File('config/checkstyle/suppressions.xml'))
 })
 
