@@ -1,4 +1,6 @@
 package me.jackwilsdon.secsy;
 
-@SuppressWarnings("checkstyle:all")
-public interface Component {}
+/**
+ * A component of an {@link EntityWrapper Entity}.
+ */
+public interface Component { }
