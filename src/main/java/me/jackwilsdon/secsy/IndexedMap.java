@@ -13,7 +13,7 @@ public final class IndexedMap<V> extends AutoKeyedMap<Integer, V> {
     private final Map<V, Integer> indexes = new HashMap<>();
 
     /**
-     * Constructs a new indexed map.
+     * Constructs a new indexed map that wraps the provided map.
      *
      * @param map the map to wrap
      */
