@@ -22,6 +22,15 @@ public final class IndexedMap<V> extends AutoKeyedMap<Integer, V> {
     }
 
     /**
+     * Returns the next index for the map.
+     *
+     * @return the next index for the map
+     */
+    public int getNextIndex() {
+        return nextIndex;
+    }
+
+    /**
      * Returns the key for the provided value.
      *
      * <p>
