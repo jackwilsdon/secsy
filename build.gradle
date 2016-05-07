@@ -22,6 +22,10 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+java {
+    sourceCompatibility = '1.7'
+}
+
 test {
     testLogging {
         exceptionFormat = 'full'
