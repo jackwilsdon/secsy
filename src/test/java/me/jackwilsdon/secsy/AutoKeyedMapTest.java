@@ -26,14 +26,14 @@ public final class AutoKeyedMapTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void testPutNonNullKey() {
-        final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<>());
+        final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>());
 
         autoKeyedMap.put(0, "Value");
     }
 
     @Test
     public void testPut() {
-        final AutoKeyedMap<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<>());
+        final AutoKeyedMap<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>());
 
         final String value = "Value";
         final Integer key = autoKeyedMap.getKey(value);
@@ -46,7 +46,7 @@ public final class AutoKeyedMapTest {
 
     @Test
     public void testPutExisting() {
-        final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<>());
+        final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>());
 
         final String value = "Value";
 
@@ -59,7 +59,7 @@ public final class AutoKeyedMapTest {
 
     @Test(expected = IllegalStateException.class)
     public void testPutExistingPreventOverwrite() {
-        final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<>(), true);
+        final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>(), true);
 
         final String value = "Value";
 
