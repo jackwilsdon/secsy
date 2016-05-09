@@ -63,7 +63,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#clear()
      */
-    public void clear() {
+    public final void clear() {
         map.clear();
     }
 
@@ -76,7 +76,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#containsKey(Object)
      */
-    public boolean containsKey(final Object key) {
+    public final boolean containsKey(final Object key) {
         return map.containsKey(key);
     }
 
@@ -89,7 +89,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#containsValue(Object)
      */
-    public boolean containsValue(final Object value) {
+    public final boolean containsValue(final Object value) {
         return map.containsValue(value);
     }
 
@@ -100,7 +100,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#entrySet()
      */
-    public Set<Map.Entry<K, V>> entrySet() {
+    public final Set<Map.Entry<K, V>> entrySet() {
         return map.entrySet();
     }
 
@@ -113,7 +113,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#equals(Object)
      */
-    public boolean equals(final Object o) {
+    public final boolean equals(final Object o) {
         return map.equals(o);
     }
 
@@ -126,7 +126,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#get(Object)
      */
-    public V get(final Object key) {
+    public final V get(final Object key) {
         return map.get(key);
     }
 
@@ -137,7 +137,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#hashCode()
      */
-    public int hashCode() {
+    public final int hashCode() {
         return map.hashCode();
     }
 
@@ -148,7 +148,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#isEmpty()
      */
-    public boolean isEmpty() {
+    public final boolean isEmpty() {
         return map.isEmpty();
     }
 
@@ -159,7 +159,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#keySet()
      */
-    public Set<K> keySet() {
+    public final Set<K> keySet() {
         return map.keySet();
     }
 
@@ -186,7 +186,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#put(Object, Object)
      */
-    public V put(final K key, final V value) {
+    public final V put(final K key, final V value) {
         if (key != null) {
             throw new UnsupportedOperationException("cannot put value with non-null key");
         }
@@ -208,7 +208,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      * @see #put(Object, Object)
      * @see Map#putAll(Map)
      */
-    public void putAll(final Map<? extends K, ? extends V> m) {
+    public final void putAll(final Map<? extends K, ? extends V> m) {
         for (final Map.Entry<? extends K, ? extends V> e : m.entrySet()) {
             put(e.getKey(), e.getValue());
         }
@@ -223,7 +223,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#remove(Object)
      */
-    public V remove(final Object key) {
+    public final V remove(final Object key) {
         return map.remove(key);
     }
 
@@ -234,7 +234,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#size()
      */
-    public int size() {
+    public final int size() {
         return map.size();
     }
 
@@ -245,7 +245,7 @@ public abstract class AutoKeyedMap<K, V> implements Map<K, V> {
      *
      * @see Map#values()
      */
-    public Collection<V> values() {
+    public final Collection<V> values() {
         return map.values();
     }
 }
