@@ -4,35 +4,83 @@
         "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+    <module name="FileLength"/>
     <module name="FileTabCharacter">
         <property name="eachLine" value="true"/>
     </module>
-
+    <module name="JavadocPackage"/>
+    <module name="NewlineAtEndOfFile"/>
     <module name="SuppressionFilter">
         <property name="file" value="config/checkstyle/suppressions.xml"/>
     </module>
-
     <module name="SuppressWarningsFilter"/>
-
     <module name="TreeWalker">
+        <module name="AnnotationLocation"/>
+        <module name="AnnotationUseStyle"/>
+        <module name="ArrayTrailingComma"/>
         <module name="ArrayTypeStyle"/>
         <module name="AtclauseOrder"/>
+        <module name="AvoidEscapedUnicodeCharacters"/>
+        <module name="AvoidInlineConditionals"/>
+        <module name="AvoidNestedBlocks"/>
         <module name="AvoidStarImport"/>
+        <module name="AvoidStaticImport">
+            <property name="excludes" value="org.junit.Assert.*"/>
+        </module>
+        <module name="BooleanExpressionComplexity"/>
+        <module name="CatchParameterName"/>
+        <module name="ClassDataAbstractionCoupling"/>
+        <module name="ClassFanOutComplexity"/>
+        <module name="ClassTypeParameterName"/>
         <module name="ConstantName"/>
+        <module name="CommentsIndentation"/>
+        <module name="CovariantEquals"/>
+        <module name="CyclomaticComplexity"/>
+        <module name="DeclarationOrder"/>
+        <module name="DefaultComesLast"/>
+        <module name="DesignForExtension"/>
         <module name="EmptyBlock"/>
+        <module name="EmptyCatchBlock"/>
+        <module name="EmptyForInitializerPad"/>
+        <module name="EmptyForIteratorPad"/>
         <module name="EmptyLineSeparator">
             <property name="allowNoEmptyLineBetweenFields" value="true"/>
         </module>
+        <module name="EmptyStatement"/>
+        <module name="EqualsAvoidNull"/>
+        <module name="EqualsHashCode"/>
+        <module name="ExecutableStatementCount"/>
+        <module name="ExplicitInitialization"/>
+        <module name="FallThrough"/>
+        <module name="FinalClass"/>
         <module name="FinalLocalVariable">
             <property name="validateEnhancedForLoopVariable" value="true"/>
         </module>
         <module name="FinalParameters"/>
         <module name="GenericWhitespace"/>
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" value="true"/>
+        </module>
+        <module name="HideUtilityClassConstructor"/>
+        <module name="IllegalCatch"/>
+        <module name="IllegalImport"/>
+        <module name="IllegalThrows"/>
+        <module name="IllegalToken"/>
+        <module name="IllegalType">
+            <property name="illegalClassNames" value="java.util.HashSet, java.util.HashMap, java.util.LinkedHashMap,
+                                                      java.util.LinkedHashSet, java.util.TreeSet, java.util.TreeMap,
+                                                      java.util.ArrayList, java.util.LinkedList"/>
+        </module>
         <module name="ImportOrder">
             <property name="groups"
                       value="/^javax?\./,/^processing\./,/^me\.jackwilsdon\./,"/>
             <property name="separated" value="true"/>
         </module>
+        <module name="Indentation"/>
+        <module name="InnerAssignment"/>
+        <module name="InnerTypeLast"/>
+        <module name="InterfaceIsType"/>
+        <module name="InterfaceTypeParameterName"/>
         <module name="JavadocMethod">
             <property name="scope" value="public"/>
         </module>
@@ -47,18 +95,38 @@
         <module name="JavadocVariable">
             <property name="scope" value="public"/>
         </module>
+        <module name="LeftCurly"/>
         <module name="LineLength">
             <property name="max" value="120"/>
         </module>
+        <module name="LocalFinalVariableName"/>
+        <module name="LocalVariableName"/>
+        <module name="MagicNumber"/>
+        <module name="MemberName"/>
+        <module name="MethodCount"/>
         <module name="MethodLength">
             <property name="max" value="20"/>
             <property name="countEmpty" value="false"/>
         </module>
+        <module name="MethodName"/>
         <module name="MethodParamPad"/>
+        <module name="MethodTypeParameterName"/>
+        <module name="MissingCtor"/>
+        <module name="MissingDeprecated"/>
+        <module name="MissingOverride"/>
         <module name="MissingSwitchDefault"/>
+        <module name="ModifiedControlVariable"/>
         <module name="ModifierOrder"/>
+        <module name="MultipleStringLiterals"/>
         <module name="MultipleVariableDeclarations"/>
+        <module name="MutableException"/>
+        <module name="NPathComplexity"/>
         <module name="NeedBraces"/>
+        <module name="NestedForDepth"/>
+        <module name="NestedIfDepth"/>
+        <module name="NestedTryDepth"/>
+        <module name="NoClone"/>
+        <module name="NoFinalizer"/>
         <module name="NoLineWrap"/>
         <module name="NonEmptyAtclauseDescription"/>
         <module name="NoWhitespaceAfter"/>
@@ -67,14 +135,38 @@
         <module name="OneTopLevelClass"/>
         <module name="OuterTypeFilename"/>
         <module name="OuterTypeNumber"/>
+        <module name="OverloadMethodsDeclarationOrder"/>
+        <module name="PackageAnnotation"/>
+        <module name="PackageDeclaration"/>
+        <module name="PackageName"/>
+        <module name="ParameterAssignment"/>
+        <module name="ParameterName"/>
         <module name="ParameterNumber"/>
         <module name="ParenPad"/>
+        <module name="RedundantImport"/>
+        <module name="RedundantModifier"/>
+        <module name="RequireThis"/>
+        <module name="RightCurly"/>
+        <module name="ReturnCount"/>
+        <module name="SeparatorWrap"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
         <module name="SingleLineJavadoc"/>
+        <module name="StaticVariableName"/>
+        <module name="StringLiteralEquality"/>
+        <module name="SummaryJavadoc"/>
+        <module name="SuperClone"/>
+        <module name="SuperFinalize"/>
         <module name="SuppressWarnings">
-            <!-- Allow checkstyle and unchecked suppressions -->
             <property name="format" value="^(?!checkstyle.*|unchecked).*$"/>
         </module>
         <module name="SuppressWarningsHolder"/>
+        <module name="ThrowsCount"/>
+        <module name="TodoComment"/>
+        <module name="TrailingComment"/>
+        <module name="TypeName"/>
+        <module name="TypecastParenPad"/>
+        <module name="UnnecessaryParentheses"/>
         <module name="UnusedImports"/>
         <module name="UpperEll"/>
         <module name="VariableDeclarationUsageDistance"/>
