@@ -8,6 +8,8 @@ import static org.junit.Assert.assertEquals;
 
 public final class ClassInstanceMapTest {
 
+    public ClassInstanceMapTest() { }
+
     @Test
     public void testGetKey() {
         final ClassInstanceMap<Object> instanceMap = new ClassInstanceMap<>(new HashMap<Class<?>, Object>());
