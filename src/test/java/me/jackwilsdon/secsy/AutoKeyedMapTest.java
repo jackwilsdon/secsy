@@ -8,6 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 public final class AutoKeyedMapTest {
+    private static final String TEST_VALUE = "Value";
 
     private final class HashCodeMap<V> extends AutoKeyedMap<Integer, V> {
         public HashCodeMap(final Map<Integer, V> map, final boolean preventOverwrite) {
@@ -28,14 +29,14 @@ public final class AutoKeyedMapTest {
     public void testPutNonNullKey() {
         final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>());
 
-        autoKeyedMap.put(0, "Value");
+        autoKeyedMap.put(0, TEST_VALUE);
     }
 
     @Test
     public void testPut() {
         final AutoKeyedMap<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>());
 
-        final String value = "Value";
+        final String value = TEST_VALUE;
         final Integer key = autoKeyedMap.getKey(value);
 
         autoKeyedMap.put(null, value);
@@ -48,7 +49,7 @@ public final class AutoKeyedMapTest {
     public void testPutExisting() {
         final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>());
 
-        final String value = "Value";
+        final String value = TEST_VALUE;
 
         autoKeyedMap.put(null, value);
 
@@ -61,7 +62,7 @@ public final class AutoKeyedMapTest {
     public void testPutExistingPreventOverwrite() {
         final Map<Integer, Object> autoKeyedMap = new HashCodeMap<>(new HashMap<Integer, Object>(), true);
 
-        final String value = "Value";
+        final String value = TEST_VALUE;
 
         autoKeyedMap.put(null, value);
         autoKeyedMap.put(null, value);
