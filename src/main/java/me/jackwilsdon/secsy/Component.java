@@ -1,6 +1,6 @@
 package me.jackwilsdon.secsy;
 
 /**
- * A component of an {@link EntityWrapper Entity}.
+ * A component of an Entity.
  */
 public interface Component { }
