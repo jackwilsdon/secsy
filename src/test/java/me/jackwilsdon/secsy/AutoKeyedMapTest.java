@@ -10,20 +10,6 @@ import static org.junit.Assert.assertTrue;
 public final class AutoKeyedMapTest {
     private static final String TEST_VALUE = "Value";
 
-    private final class HashCodeMap<V> extends AutoKeyedMap<Integer, V> {
-        public HashCodeMap(final Map<Integer, V> map, final boolean preventOverwrite) {
-            super(map, preventOverwrite);
-        }
-
-        public HashCodeMap(final Map<Integer, V> map) {
-            super(map);
-        }
-
-        @Override
-        public Integer getKey(final V value) {
-            return value.hashCode();
-        }
-    }
     public AutoKeyedMapTest() { }
 
     @Test(expected = UnsupportedOperationException.class)
@@ -67,5 +53,20 @@ public final class AutoKeyedMapTest {
 
         autoKeyedMap.put(null, value);
         autoKeyedMap.put(null, value);
+    }
+
+    private final class HashCodeMap<V> extends AutoKeyedMap<Integer, V> {
+        HashCodeMap(final Map<Integer, V> map, final boolean preventOverwrite) {
+            super(map, preventOverwrite);
+        }
+
+        HashCodeMap(final Map<Integer, V> map) {
+            super(map);
+        }
+
+        @Override
+        public Integer getKey(final V value) {
+            return value.hashCode();
+        }
     }
 }
