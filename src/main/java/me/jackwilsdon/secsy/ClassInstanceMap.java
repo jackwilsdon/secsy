@@ -59,6 +59,10 @@ public final class ClassInstanceMap<V> extends AutoKeyedMap<Class<?>, V> {
     public <T> T getCast(final Class<T> key) {
         final V value = get(key);
 
-        return value == null ? null : key.cast(value);
+        if (value == null) {
+            return null;
+        }
+
+        return key.cast(value);
     }
 }
