@@ -24,6 +24,7 @@ public final class AutoKeyedMapTest {
             return value.hashCode();
         }
     }
+    public AutoKeyedMapTest() { }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testPutNonNullKey() {
