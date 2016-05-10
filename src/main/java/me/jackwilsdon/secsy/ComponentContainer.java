@@ -15,7 +15,7 @@ public final class ComponentContainer {
      * Constructs a new component container that wraps the provided map.
      *
      * @param map the map to wrap
-     * @param preventOverwrite prevent overwriting of existing keys
+     * @param preventOverwrite prevent overwriting of existing components
      *
      * @see {@link AutoKeyedMap#AutoKeyedMap(Map, boolean)}
      */
@@ -32,6 +32,15 @@ public final class ComponentContainer {
      */
     public ComponentContainer(final Map<Class<?>, Component> map) {
         this(map, false);
+    }
+
+    /**
+     * Returns whether or not components are overwritable.
+     *
+     * @return whether or not components are overwritable
+     */
+    public boolean isOverwritable() {
+        return components.isOverwritable();
     }
 
     /**
@@ -72,9 +81,16 @@ public final class ComponentContainer {
     }
 
     /**
-     * Adds a component to the container, overwriting any other components of the same class.
+     * Adds a component to the container.
+     *
+     * <p>
+     * If {@link #isOverwritable()} is false and a component with the same class as the provided component is already
+     * present in the container, a {@link UnsupportedOperationException} is thrown.
+     * </p>
      *
      * @param component the component to add to the container
+     *
+     * @see AutoKeyedMap#put(Object, Object)
      */
     public void add(final Component component) {
         components.put(null, component);
