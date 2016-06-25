@@ -65,6 +65,7 @@ public final class ComponentContainer {
      * </p>
      *
      * @param componentClass the class of the component to retrieve
+     * @param <T> the type of the component to retrieve
      *
      * @return the component of the provided class.
      *
