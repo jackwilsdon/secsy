@@ -151,7 +151,7 @@ public final class AutoKeyedMapTest {
      *
      * @param <V> the value type for the map
      */
-    private final class HashCodeMap<V> extends AutoKeyedMap<Integer, V> {
+    private static final class HashCodeMap<V> extends AutoKeyedMap<Integer, V> {
         HashCodeMap(final Map<Integer, V> map, final boolean preventOverwrite) {
             super(map, preventOverwrite);
         }
@@ -173,7 +173,7 @@ public final class AutoKeyedMapTest {
      *     Note that this class breaks the {@code equals}/{@code hashCode} contract and should only be used for testing.
      * </p>
      */
-    private final class FakeHashCodeObject {
+    private static final class FakeHashCodeObject {
         private final int hashCode;
 
         FakeHashCodeObject(final int hashCode) {
